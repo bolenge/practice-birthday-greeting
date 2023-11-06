@@ -1,4 +1,5 @@
 <?php
+require_once './SendMail.php';
 
 class App
 {
@@ -21,7 +22,7 @@ class App
                             $date = explode('/', $tokens[2]);
                             if (count($date) == 3) {
                                 if ((int)date('d') == (int)$date[0] && (int)date('m') == (int)$date[1]) {
-                                    self::sendEmail(
+                                    SendMail::send(
                                         $tokens[3],
                                         "Joyeux Anniversaire !",
                                         "Bonjour " . $tokens[0] . ",\nJoyeux Anniversaire !\nA bientôt,"
@@ -42,14 +43,6 @@ class App
         } else {
             echo "Unable to open file '" . $fileName . "'" . PHP_EOL;
         }
-    }
-
-    public static function sendEmail(string $to, string $title, string $body)
-    {
-        echo "Sending email to : " . $to . PHP_EOL;
-        echo "Title: " . $title . PHP_EOL;
-        echo "Body: Body\n" . $body . PHP_EOL;
-        echo "-------------------------" . PHP_EOL;
     }
 }
 
