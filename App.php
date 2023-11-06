@@ -53,4 +53,4 @@ class App
     }
 }
 
-App::run(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'employees.txt');
+App::run(__DIR__ . DIRECTORY_SEPARATOR . 'employees.txt');
