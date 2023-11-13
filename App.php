@@ -20,7 +20,7 @@ class App
                 }
             }
 
-                echo "Batch job done." . PHP_EOL;
+            echo "Batch job done." . PHP_EOL;
         }
     }
 
