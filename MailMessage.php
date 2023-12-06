@@ -1,8 +1,10 @@
 <?php
 
-class SendMail
+require_once './Message.php';
+
+class MailMessage implements Message
 {
-    public static function send(string $to, string $title, string $body)
+    public function send(string $to, string $title, string $body): void
     {
         echo "Sending email to : " . $to . PHP_EOL;
         echo "Title: " . $title . PHP_EOL;
